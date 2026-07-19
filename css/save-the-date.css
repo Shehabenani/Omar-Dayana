@@ -280,7 +280,7 @@
   .save-date-banner {
     --save-date-side-inset: clamp(48px, 12vw, 96px);
     --save-date-title-top: 12.5%;
-    --save-date-date-top: 52%;
+    --save-date-date-top: 38%;
     --save-date-countdown-label-top: 57%;
     --save-date-timer-top: 79%;
     --save-date-flower-inset: clamp(72px, 22vw, 104px);
@@ -325,7 +325,7 @@
 
 @media (max-width: 390px) {
   .save-date-banner {
-    --save-date-date-top: 52%;
+    --save-date-date-top: 35%;
     --save-date-countdown-label-top: 61%;
     --save-date-timer-top: 81%;
     --save-date-flower-inset: clamp(68px, 21vw, 96px);
@@ -358,8 +358,8 @@ html.is-safari .save-date-banner__image {
 
 @media (max-width: 480px) {
   html.is-safari .save-date-banner {
-    --save-date-date-top: 66%;
-    --save-date-date-offset: 16px;
+    --save-date-date-top: 41%;
+    --save-date-date-offset: 0px;
     --save-date-countdown-label-top: 58%;
     --save-date-timer-top: 80%;
   }
@@ -388,8 +388,8 @@ html.is-safari .save-date-banner__image {
 
 @media (max-width: 390px) {
   html.is-safari .save-date-banner {
-    --save-date-date-top: 38%;
-    --save-date-date-offset: 19px;
+    --save-date-date-top: 39%;
+    --save-date-date-offset: 0px;
     --save-date-countdown-label-top: 62%;
     --save-date-timer-top: 82%;
   }
