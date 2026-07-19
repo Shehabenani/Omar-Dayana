@@ -1,0 +1,1341 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Omar & Dayana — 8.8.2026</title>
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      href="favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Josefin+Sans:wght@300;400&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/themes/champagne.css" />
+    <link rel="stylesheet" href="css/fonts.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/typography.css" />
+    <link rel="stylesheet" href="css/video-intro.css" />
+    <link rel="stylesheet" href="css/hero.css" />
+    <link rel="stylesheet" href="css/hero-flowers.css" />
+    <link rel="stylesheet" href="css/save-the-date.css" />
+    <link rel="stylesheet" href="css/sections.css" />
+    <link rel="stylesheet" href="css/moments.css" />
+    <link rel="stylesheet" href="css/details.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/sweet-dreams.css" />
+    <link rel="stylesheet" href="css/see-you-soon.css" />
+    <link rel="stylesheet" href="css/i18n.css" />
+    <link
+      rel="preload"
+      as="image"
+      href="assets/Intro/intro-poster.png"
+      fetchpriority="high"
+    />
+    <script>
+      (function () {
+        var lang = localStorage.getItem("inv-lang");
+        if (lang === "ar") {
+          document.documentElement.lang = "ar";
+          document.documentElement.dir = "rtl";
+        }
+
+        var ua = navigator.userAgent;
+        var isSafari =
+          /Safari/i.test(ua) &&
+          !/Chrome|CriOS|Chromium|EdgiOS|FxiOS|OPiOS|mercury/i.test(ua);
+        if (isSafari) {
+          document.documentElement.classList.add("is-safari");
+        }
+      })();
+    </script>
+    <script src="scripts/i18n.js" defer></script>
+    <script src="scripts/moments-marquee.js" defer></script>
+  </head>
+  <body class="locked">
+    <button id="lang-toggle" type="button" aria-label="Switch to Arabic">
+      AR
+    </button>
+
+    <div class="damask-bg"></div>
+
+    <!-- ============ VIDEO INTRO ============ -->
+    <div id="envelope-screen">
+      <div class="video-intro-wrap" id="video-intro-wrap">
+        <img
+          class="intro-video-poster"
+          src="assets/Intro/intro-poster.png"
+          alt=""
+          aria-hidden="true"
+          width="720"
+          height="1280"
+          decoding="async"
+          fetchpriority="high"
+        />
+        <video
+          id="intro-video"
+          class="intro-video"
+          preload="auto"
+          playsinline
+          webkit-playsinline
+          muted
+          poster="assets/Intro/intro-poster.jpg"
+        >
+          <source src="assets/Intro/INV-FINAL-FINAL.mp4" type="video/mp4" />
+        </video>
+
+        <div class="video-overlay" id="video-overlay">
+          <p class="video-instruction" data-i18n="tapToOpen">Tap to open</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ HERO POSTER ============ -->
+    <section class="hero-poster reveal" id="hero">
+      <div class="hero-poster__bg" aria-hidden="true">
+        <img
+          class="hero-poster__image"
+          src="assets/hero.png"
+          alt=""
+          width="1366"
+          height="871"
+          decoding="async"
+          fetchpriority="high"
+        />
+      </div>
+      <div
+        class="hero-poster__petals"
+        id="hero-petals"
+        aria-hidden="true"
+      ></div>
+      <div class="hero-poster__content">
+        <p class="hero-poster__tagline" data-i18n="heroTagline">
+          Welcome to the Wedding of
+        </p>
+        <h1 class="hero-poster__names">
+          Omar <span class="hero-poster__amp">&amp;</span> Dayana
+        </h1>
+        <p class="hero-poster__date" data-i18n="heroDate">8 August 2026</p>
+      </div>
+      <a
+        class="hero-poster__scroll"
+        href="#save-the-date"
+        aria-label="Scroll to countdown"
+        data-i18n-aria="ariaScrollCountdown"
+      >
+        <span class="hero-poster__scroll-ring">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.5"
+            aria-hidden="true"
+          >
+            <path d="M12 5v14M6 13l6 6 6-6" />
+          </svg>
+        </span>
+        <span class="hero-poster__scroll-label" data-i18n="scrollDown"
+          >Scroll Down</span
+        >
+      </a>
+    </section>
+
+    <!-- ============ INVITE BANNER ============ -->
+    <section class="invite-banner reveal" id="invite-banner">
+      <div class="invite-banner__bg" aria-hidden="true">
+        <img
+          class="invite-banner__image"
+          src="assets/greetings.jpeg"
+          alt=""
+          width="1366"
+          height="627"
+          decoding="async"
+          loading="lazy"
+        />
+      </div>
+      <div class="invite-banner__content">
+        <p class="invite-banner__text">
+          <span class="invite-banner__line" data-i18n="inviteLine1"
+            >Together with our families, we joyfully invite</span
+          >
+          <span class="invite-banner__line" data-i18n="inviteLine2"
+            >you to celebrate the beginning of our forever.</span
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- ============ SAVE THE DATE ============ -->
+    <section class="save-date-banner reveal" id="save-the-date">
+      <div class="save-date-banner__bg" aria-hidden="true">
+        <img
+          class="save-date-banner__image"
+          src="assets/SaveTheDate.jpg"
+          alt=""
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="save-date-banner__content">
+        <h2 class="save-date-banner__title" data-i18n="saveTheDateHeading">
+          Save the Date
+        </h2>
+        <p class="save-date-banner__date" data-i18n="saveTheDateLine">
+          SATURDAY, 8 AUGUST, 2026
+        </p>
+        <div class="save-date-banner__countdown">
+          <p
+            class="save-date-banner__countdown-label"
+            data-i18n="countdownHeading"
+          >
+            Countdown
+          </p>
+          <div class="save-date-banner__timer" aria-live="polite">
+            <div class="save-date-banner__cell">
+              <span class="save-date-banner__num" id="cd-days">00</span>
+              <span class="save-date-banner__unit" data-i18n="cdDays"
+                >Days</span
+              >
+            </div>
+            <span class="save-date-banner__sep" aria-hidden="true">:</span>
+            <div class="save-date-banner__cell">
+              <span class="save-date-banner__num" id="cd-hours">00</span>
+              <span class="save-date-banner__unit" data-i18n="cdHours"
+                >Hours</span
+              >
+            </div>
+            <span class="save-date-banner__sep" aria-hidden="true">:</span>
+            <div class="save-date-banner__cell">
+              <span class="save-date-banner__num" id="cd-mins">00</span>
+              <span class="save-date-banner__unit" data-i18n="cdMins"
+                >Minutes</span
+              >
+            </div>
+            <span class="save-date-banner__sep" aria-hidden="true">:</span>
+            <div class="save-date-banner__cell">
+              <span class="save-date-banner__num" id="cd-secs">00</span>
+              <span class="save-date-banner__unit" data-i18n="cdSecs"
+                >Seconds</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VENUE ============ -->
+    <section class="venue-banner reveal" id="venue">
+      <div class="venue-banner__bg" aria-hidden="true">
+        <img
+          class="venue-banner__frame"
+          src="assets/Venue_section.jpg"
+          alt=""
+          width="2561"
+          height="1633"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="venue-banner__content">
+        <div class="venue-banner__intro">
+          <h2 class="venue-banner__heading" data-i18n="venueSectionHeading">
+            The Venue
+          </h2>
+          <p class="venue-banner__location" data-i18n="venueLocationLine">
+            ALMASA HOTEL - NASR CITY
+          </p>
+        </div>
+        <p class="venue-banner__hall" data-i18n="venueHall">EMERALD VENUE</p>
+      </div>
+    </section>
+
+    <!-- ============ SECTION BREAK ============ -->
+    <section class="section-divider reveal" aria-hidden="true">
+      <img
+        src="assets/section-break.jpeg"
+        alt=""
+        width="2561"
+        height="1176"
+        loading="lazy"
+        +
+        decoding="async"
+      />
+    </section>
+
+    <!-- ============ OUR MOMENTS ============ -->
+    <section class="moments reveal" id="moments">
+      <h2 class="section-heading" data-i18n="momentsHeading">Memories</h2>
+      <div class="moments__gallery">
+        <div class="moments__row">
+          <div class="moments__viewport">
+            <div class="moments__track moments__track--ltr">
+              <div class="moments__set">
+                <img
+                  src="assets/moments/moment-01.JPG"
+                  alt="Omar and Dayana moment 1"
+                  data-i18n-alt="momentAlt1"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-02.JPG"
+                  alt="Omar and Dayana moment 2"
+                  data-i18n-alt="momentAlt2"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-03.JPG"
+                  alt="Omar and Dayana moment 3"
+                  data-i18n-alt="momentAlt3"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-04.JPG"
+                  alt="Omar and Dayana moment 4"
+                  data-i18n-alt="momentAlt4"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-05.JPG"
+                  alt="Omar and Dayana moment 5"
+                  data-i18n-alt="momentAlt5"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-001.JPG"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-07.JPG"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-08.JPG"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-09.JPG"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-10.JPG"
+                  alt=""
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="moments__set" aria-hidden="true">
+                <img
+                  src="assets/moments/moment-01.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-02.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-03.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-04.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-05.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-001.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-07.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-08.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-09.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-10.JPG"
+                  alt=""
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="moments__row">
+          <div class="moments__viewport">
+            <div class="moments__track moments__track--rtl">
+              <div class="moments__set">
+                <img
+                  src="assets/moments/moment-12.jpg"
+                  alt="Omar and Dayana moment 6"
+                  data-i18n-alt="momentAlt6"
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-13.jpg"
+                  alt="Omar and Dayana moment 7"
+                  data-i18n-alt="momentAlt7"
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-14.jpg"
+                  alt="Omar and Dayana moment 8"
+                  data-i18n-alt="momentAlt8"
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-15.jpg"
+                  alt="Omar and Dayana moment 9"
+                  data-i18n-alt="momentAlt9"
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-16.jpg"
+                  alt="Omar and Dayana moment 10"
+                  data-i18n-alt="momentAlt10"
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-17.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-18.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-19.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-20.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-21.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="lazy"
+                  decoding="async"
+                />
+              </div>
+              <div class="moments__set" aria-hidden="true">
+                <img
+                  src="assets/moments/moment-12.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-13.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-14.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-15.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-16.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-17.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-18.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-19.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-20.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+                <img
+                  src="assets/moments/moment-21.jpg"
+                  alt=""
+                  width="960"
+                  height="1280"
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MAIN INVITATION ============ -->
+    <main id="invitation">
+      <!-- <section class="reveal portraits-section">
+        <h2 class="section-heading">The Bride &amp; The Groom</h2>
+        <div class="divider">
+          <span class="rule"></span>❧<span class="rule flip"></span>
+        </div>
+        <div class="portraits" id="portraits-wrap">
+          <div class="portrait bride">
+            <div class="frame">
+              <svg
+                viewBox="0 0 100 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="50"
+                  cy="38"
+                  r="24"
+                  fill="currentColor"
+                  opacity="0.55"
+                />
+                <path
+                  d="M12 118c4-32 24-46 38-46s34 14 38 46"
+                  fill="currentColor"
+                  opacity="0.55"
+                />
+                <path
+                  d="M50 6c-14 0-18 12-18 12s10-4 18-4 18 4 18 4-4-12-18-12z"
+                  fill="currentColor"
+                  opacity="0.35"
+                />
+              </svg>
+            </div>
+            <div class="p-name">Dayana</div>
+            <div class="p-role">The Bride</div>
+          </div>
+          <div class="medallion">&amp;</div>
+          <div class="portrait groom">
+            <div class="frame">
+              <svg
+                viewBox="0 0 100 120"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="50"
+                  cy="38"
+                  r="24"
+                  fill="currentColor"
+                  opacity="0.55"
+                />
+                <path
+                  d="M12 118c4-32 24-46 38-46s34 14 38 46"
+                  fill="currentColor"
+                  opacity="0.55"
+                />
+                <rect
+                  x="38"
+                  y="10"
+                  width="24"
+                  height="10"
+                  rx="2"
+                  fill="currentColor"
+                  opacity="0.35"
+                />
+              </svg>
+            </div>
+            <div class="p-name">Omar</div>
+            <div class="p-role">The Groom</div>
+          </div>
+        </div>
+      </section> -->
+
+      <section class="reveal details-section" id="details">
+        <h2 class="section-heading" data-i18n="detailsHeading">What To Know</h2>
+
+        <div class="details-stack">
+          <article class="details-item reveal-stagger">
+            <div class="details-item__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" />
+                <path d="M16 2v4M8 2v4M3 10h18" />
+              </svg>
+            </div>
+            <span class="details-item__label" data-i18n="dateTimeLabel"
+              >Date &amp; Time</span
+            >
+            <span class="details-item__line" aria-hidden="true"></span>
+            <p class="details-item__primary" data-i18n="datePrimary">
+              August 8, 2026
+            </p>
+            <p class="details-item__secondary" data-i18n="ceremonyTime">
+              Ceremony begins at 7:00 PM
+            </p>
+          </article>
+
+          <article class="details-item reveal-stagger">
+            <div class="details-item__icon" aria-hidden="true">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+              >
+                <path d="M12 21s7-4.5 7-11a7 7 0 10-14 0c0 6.5 7 11 7 11z" />
+                <circle cx="12" cy="10" r="2.5" />
+              </svg>
+            </div>
+            <span class="details-item__label" data-i18n="venueLabel"
+              >Venue</span
+            >
+            <span class="details-item__line" aria-hidden="true"></span>
+            <p class="details-item__primary" data-i18n="venuePrimary">
+              Emerald Venue
+            </p>
+            <p class="details-item__secondary" data-i18n="venueSecondary">
+              Almasa Hotel
+            </p>
+          </article>
+
+          <!--
+            Replace iframe src with your embed URL from:
+            Google Maps → search venue → Share → Embed a map → copy src
+          -->
+          <div class="details-map reveal-stagger">
+            <iframe
+              class="details-map__frame"
+              title="Almasa Hotel location"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+              src="https://maps.google.com/maps?q=Almasa+Hotel,+Nasr+City,+Cairo,+Egypt&amp;hl=en&amp;z=15&amp;output=embed"
+            ></iframe>
+            <a
+              class="details-map__directions"
+              href="https://maps.google.com/?q=Almasa+Hotel+Nasr+City+Cairo"
+              target="_blank"
+              rel="noopener noreferrer"
+              data-i18n="getDirections"
+            >
+              Get Directions
+            </a>
+          </div>
+        </div>
+
+        <div class="details-divider reveal" aria-hidden="true">
+          <img
+            class="details-divider__image"
+            src="assets/svg/divider.svg"
+            alt=""
+            width="1366"
+            height="126"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </section>
+    </main>
+
+    <!-- ============ SWEET DREAMS ============ -->
+    <section class="sweet-dreams-banner reveal" id="sweet-dreams">
+      <div class="sweet-dreams-banner__bg" aria-hidden="true">
+        <img
+          class="sweet-dreams-banner__image"
+          src="assets/sweetsweet.png"
+          alt=""
+          width="2561"
+          height="1633"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="sweet-dreams-banner__content">
+        <p class="sweet-dreams-banner__text">
+          <span
+            class="sweet-dreams-banner__text-line"
+            data-i18n="sweetDreamsLine1"
+            >Sweet Dreams for</span
+          >
+          <span
+            class="sweet-dreams-banner__text-line"
+            data-i18n="sweetDreamsLine2"
+            >Your Little Ones</span
+          >
+        </p>
+        <div class="sweet-dreams-banner__baby reveal" aria-hidden="true">
+          <span class="sweet-dreams-banner__baby-glow"></span>
+          <img
+            class="sweet-dreams-banner__baby-icon"
+            src="assets/babysleep.PNG"
+            alt=""
+            width="1366"
+            height="768"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SEE YOU SOON ============ -->
+    <section class="see-you-soon-banner" id="see-you-soon">
+      <div class="see-you-soon-banner__bg" aria-hidden="true">
+        <img
+          class="see-you-soon-banner__image"
+          src="assets/see-u-soon-FINALLLLLLL.jpeg"
+          alt=""
+          width="2561"
+          height="1633"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <div class="see-you-soon-banner__content">
+        <h2
+          class="see-you-soon-banner__heading reveal"
+          data-i18n="seeYouSoonHeading"
+        >
+          See You Soon
+        </h2>
+        <p class="see-you-soon-banner__message reveal">
+          <span
+            class="see-you-soon-banner__message-line"
+            data-i18n="seeYouSoonMessageLine1"
+            >We can't wait to celebrate this</span
+          >
+          <span
+            class="see-you-soon-banner__message-line"
+            data-i18n="seeYouSoonMessageLine2"
+            >unforgettable day with you.</span
+          >
+        </p>
+        <p
+          class="see-you-soon-banner__closing reveal"
+          data-i18n="seeYouSoonClosing"
+        >
+          With love,
+        </p>
+        <p
+          class="see-you-soon-banner__names reveal"
+          data-i18n="seeYouSoonNames"
+        >
+          Omar &amp; Dayana
+        </p>
+      </div>
+    </section>
+
+    <button
+      id="sound-toggle"
+      aria-label="Toggle music"
+      data-i18n-aria="ariaToggleMusic"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.6"
+      >
+        <path d="M4 9v6h4l5 4V5L8 9H4z" />
+        <path id="wave" d="M16 8a6 6 0 010 8" />
+      </svg>
+    </button>
+
+    <audio id="bg-track" loop preload="auto">
+      <source
+        src="assets/Brooklyn Duo - A Thousand Years [WEDDING VERSION].mp3"
+        type="audio/mpeg"
+      />
+    </audio>
+
+    <script>
+      /* ================= VIDEO INTRO SEQUENCE ================= */
+      const introVideo = document.getElementById("intro-video");
+      const videoWrap = document.getElementById("video-intro-wrap");
+      const introPoster = document.querySelector(".intro-video-poster");
+      const videoOverlay = document.getElementById("video-overlay");
+      const envScreen = document.getElementById("envelope-screen");
+      const soundToggle = document.getElementById("sound-toggle");
+      const bgTrack = document.getElementById("bg-track");
+
+      const videoInstruction = document.querySelector(".video-instruction");
+      const introTapTargets = [envScreen, videoOverlay];
+
+      let opened = false;
+      let introBusy = false;
+      let playAttempts = 0;
+      let muted = false;
+      let fadeStarted = false;
+      let transitionReady = false;
+
+      const MAX_PLAY_ATTEMPTS = 2;
+      const CANPLAY_TIMEOUT_MS = 10000;
+      let lastIntroTapAt = 0;
+
+      function setIntroMessage(key) {
+        if (!videoInstruction) return;
+        videoInstruction.dataset.i18n = key;
+        if (window.invitationI18n) {
+          videoInstruction.textContent = window.invitationI18n(key);
+        }
+      }
+
+      function waitForCanPlay() {
+        if (introVideo.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
+          return Promise.resolve();
+        }
+
+        return new Promise((resolve, reject) => {
+          const timer = setTimeout(() => {
+            cleanup();
+            reject(new Error("canplay-timeout"));
+          }, CANPLAY_TIMEOUT_MS);
+
+          function cleanup() {
+            clearTimeout(timer);
+            introVideo.removeEventListener("canplay", onReady);
+            introVideo.removeEventListener("error", onError);
+          }
+
+          function onReady() {
+            cleanup();
+            resolve();
+          }
+
+          function onError() {
+            cleanup();
+            reject(new Error("video-error"));
+          }
+
+          introVideo.addEventListener("canplay", onReady, { once: true });
+          introVideo.addEventListener("error", onError, { once: true });
+          introVideo.load();
+        });
+      }
+
+      function setupVideoTransition() {
+        if (transitionReady) return;
+        transitionReady = true;
+
+        const videoDuration = introVideo.duration || 10;
+        const fadeTime = Math.max(videoDuration - 1.5, videoDuration * 0.85);
+
+        function checkTime() {
+          if (introVideo.currentTime >= fadeTime) {
+            introVideo.removeEventListener("timeupdate", checkTime);
+            startFadeTransition();
+          }
+        }
+
+        introVideo.addEventListener("timeupdate", checkTime);
+        introVideo.addEventListener("ended", startFadeTransition, {
+          once: true,
+        });
+      }
+
+      function showIntroPoster() {
+        if (videoWrap) videoWrap.classList.remove("is-playing");
+        if (introPoster) introPoster.classList.remove("is-hidden");
+        if (introVideo) introVideo.classList.remove("intro-video--ready");
+      }
+
+      function hideIntroPoster() {
+        if (introPoster) introPoster.classList.add("is-hidden");
+        if (videoWrap) videoWrap.classList.add("is-playing");
+        if (introVideo) introVideo.classList.add("intro-video--ready");
+      }
+
+      function primeIntroFrame() {
+        if (!introVideo || introVideo.dataset.primed === "1") return;
+
+        introVideo.muted = true;
+
+        waitForCanPlay()
+          .then(() => introVideo.play())
+          .then(() => {
+            requestAnimationFrame(() => {
+              introVideo.pause();
+              try {
+                introVideo.currentTime = 0;
+              } catch (err) {
+                /* ignore seek errors on some mobile browsers */
+              }
+              introVideo.dataset.primed = "1";
+            });
+          })
+          .catch(() => {
+            /* Poster image still covers the pre-tap state on mobile */
+          });
+      }
+
+      function resetIntroOverlay() {
+        opened = false;
+        introBusy = false;
+        showIntroPoster();
+        videoOverlay.classList.remove("playing", "loading");
+      }
+
+      function skipIntroToInvitation() {
+        resetIntroOverlay();
+        startMusic();
+        startFadeTransition();
+      }
+
+      function handlePlayFailure() {
+        introBusy = false;
+        videoOverlay.classList.remove("loading");
+
+        if (playAttempts >= MAX_PLAY_ATTEMPTS || introVideo.error) {
+          skipIntroToInvitation();
+          return;
+        }
+
+        resetIntroOverlay();
+        setIntroMessage("tapAgain");
+      }
+
+      function onIntroPlaybackStarted() {
+        introBusy = false;
+        hideIntroPoster();
+        videoOverlay.classList.remove("loading");
+        videoOverlay.classList.add("playing");
+
+        // iOS requires muted play first; unmute only after playback begins
+        introVideo.muted = false;
+
+        setTimeout(() => {
+          startMusic();
+        }, 100);
+
+        if (introVideo.duration && !isNaN(introVideo.duration)) {
+          setupVideoTransition();
+        } else {
+          introVideo.addEventListener("loadedmetadata", setupVideoTransition, {
+            once: true,
+          });
+        }
+      }
+
+      function playIntroVideo() {
+        if (opened || introBusy || fadeStarted) return;
+
+        introBusy = true;
+        opened = true;
+        playAttempts += 1;
+        videoOverlay.classList.add("loading");
+        setIntroMessage("introLoading");
+
+        introVideo.muted = true;
+
+        try {
+          introVideo.currentTime = 0;
+        } catch (err) {
+          /* ignore seek errors on some mobile browsers */
+        }
+
+        waitForCanPlay()
+          .then(() => introVideo.play())
+          .then(onIntroPlaybackStarted)
+          .catch(handlePlayFailure);
+      }
+
+      introVideo.addEventListener("error", () => {
+        if (!fadeStarted) skipIntroToInvitation();
+      });
+
+      function startFadeTransition() {
+        if (fadeStarted) return;
+        fadeStarted = true;
+
+        envScreen.classList.add("hide");
+
+        setTimeout(() => {
+          envScreen.classList.add("gone");
+          document.body.classList.remove("locked");
+          soundToggle.classList.add("show");
+          initScrollReveal();
+          setTimeout(gentleAutoScroll, 600);
+        }, 1700);
+      }
+
+      function onIntroTap(e) {
+        if (
+          e.type === "pointerup" &&
+          e.pointerType === "mouse" &&
+          e.button !== 0
+        ) {
+          return;
+        }
+
+        const now = Date.now();
+        if (e.type === "click" && now - lastIntroTapAt < 700) {
+          return;
+        }
+        if (e.type === "pointerup" || e.type === "touchend") {
+          lastIntroTapAt = now;
+        }
+
+        if (e.cancelable) e.preventDefault();
+        playIntroVideo();
+      }
+
+      introTapTargets.forEach((el) => {
+        if (!el) return;
+        el.addEventListener("pointerup", onIntroTap);
+        el.addEventListener("click", onIntroTap);
+        el.addEventListener("touchend", onIntroTap, { passive: false });
+      });
+
+      showIntroPoster();
+      primeIntroFrame();
+
+      /* ================= AUTO SCROLL ================= */
+      let autoScrollFrame = null;
+      let autoScrollActive = false;
+
+      function easeOutCubic(t) {
+        return 1 - Math.pow(1 - t, 3);
+      }
+
+      function gentleAutoScroll() {
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        const maxScroll = () =>
+          Math.max(
+            0,
+            document.documentElement.scrollHeight - window.innerHeight,
+          );
+
+        if (reducedMotion) {
+          window.scrollTo(0, Math.min(window.innerHeight * 0.5, maxScroll()));
+          return;
+        }
+
+        const targetSpeed = 58;
+        const rampMs = 1400;
+        const bottomEasePx = 360;
+        let lastNow = performance.now();
+        const rampStart = lastNow;
+        autoScrollActive = true;
+
+        function stopAutoScroll() {
+          if (!autoScrollActive) return;
+          autoScrollActive = false;
+          if (autoScrollFrame) cancelAnimationFrame(autoScrollFrame);
+          autoScrollFrame = null;
+          window.removeEventListener("wheel", onUserScroll);
+          window.removeEventListener("touchstart", onUserScroll);
+          window.removeEventListener("touchmove", onUserScroll);
+          window.removeEventListener("keydown", onUserScroll);
+        }
+
+        function onUserScroll(e) {
+          if (e.type === "keydown") {
+            const scrollKeys = [
+              "ArrowUp",
+              "ArrowDown",
+              "PageUp",
+              "PageDown",
+              "Home",
+              "End",
+              " ",
+            ];
+            if (!scrollKeys.includes(e.key)) return;
+          }
+          stopAutoScroll();
+        }
+
+        function step(now) {
+          if (!autoScrollActive) return;
+
+          const dt = Math.min((now - lastNow) / 1000, 0.064);
+          lastNow = now;
+
+          const end = maxScroll();
+          const y = window.scrollY;
+
+          if (y >= end - 0.5) {
+            window.scrollTo(0, end);
+            stopAutoScroll();
+            return;
+          }
+
+          const ramp = Math.min((now - rampStart) / rampMs, 1);
+          const speed = targetSpeed * easeOutCubic(ramp);
+          const bottomFactor =
+            end - y < bottomEasePx ? (end - y) / bottomEasePx : 1;
+          const delta = speed * bottomFactor * dt;
+
+          window.scrollTo(0, Math.min(y + delta, end));
+          autoScrollFrame = requestAnimationFrame(step);
+        }
+
+        window.addEventListener("wheel", onUserScroll, { passive: true });
+        window.addEventListener("touchstart", onUserScroll, { passive: true });
+        window.addEventListener("touchmove", onUserScroll, { passive: true });
+        window.addEventListener("keydown", onUserScroll);
+
+        autoScrollFrame = requestAnimationFrame(step);
+      }
+
+      /* ================= SCROLL REVEAL ================= */
+      function initScrollReveal() {
+        const hero = document.getElementById("hero");
+        if (hero) hero.classList.add("in-view");
+
+        const els = document.querySelectorAll(".reveal");
+        const io = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((en) => {
+              if (en.isIntersecting) {
+                en.target.classList.add("in-view");
+                if (en.target.querySelector("#portraits-wrap"))
+                  en.target
+                    .querySelector("#portraits-wrap")
+                    .classList.add("in-view");
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: "0px 0px -5% 0px" },
+        );
+        els.forEach((el) => io.observe(el));
+      }
+
+      /* ================= HERO FLOWER SHOWER ================= */
+      const petalColors = [
+        "#E8D9C4",
+        "#C4A574",
+        "#FAF7F2",
+        "#EDE6DC",
+        "#DDD2C4",
+        "#D4B896",
+      ];
+      const leafColors = ["#B5C4A8", "#9AAD8C", "#C9BDAE", "#A8B89A"];
+
+      function updatePetalFallDistance() {
+        const hero = document.getElementById("hero");
+        const container = document.getElementById("hero-petals");
+        if (!hero || !container) return;
+        container.style.setProperty(
+          "--hero-fall",
+          `${hero.offsetHeight + 32}px`,
+        );
+      }
+
+      function initHeroPetals() {
+        const container = document.getElementById("hero-petals");
+        const hero = document.getElementById("hero");
+        if (!container || !hero) return;
+
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)",
+        ).matches;
+        if (reducedMotion) return;
+
+        updatePetalFallDistance();
+        window.addEventListener("resize", updatePetalFallDistance, {
+          passive: true,
+        });
+
+        const isMobile = window.innerWidth < 768;
+        const isSmallMobile = window.innerWidth < 480;
+        const count = isSmallMobile ? 14 : isMobile ? 16 : 28;
+        const sizeMin = isSmallMobile ? 4 : isMobile ? 5 : 10;
+        const sizeRange = isSmallMobile ? 4 : isMobile ? 5 : 10;
+        const swayRange = isMobile ? 36 : 120;
+        const durationMin = isMobile ? 11 : 8;
+        const durationRange = isMobile ? 9 : 8;
+
+        for (let i = 0; i < count; i++) {
+          const el = document.createElement("span");
+          const isLeaf = i % 3 === 0;
+          el.className = `hero-petal ${isLeaf ? "hero-petal--leaf" : "hero-petal--petal"}`;
+          el.style.left = `${Math.random() * 100}%`;
+          el.style.setProperty(
+            "--size",
+            `${sizeMin + Math.random() * sizeRange}px`,
+          );
+          el.style.setProperty("--rot", `${Math.random() * 360}deg`);
+          el.style.setProperty(
+            "--sway",
+            `${-swayRange / 2 + Math.random() * swayRange}px`,
+          );
+          el.style.setProperty(
+            "--peak-opacity",
+            isMobile
+              ? `${0.22 + Math.random() * 0.28}`
+              : `${0.45 + Math.random() * 0.35}`,
+          );
+          el.style.animationDuration = `${durationMin + Math.random() * durationRange}s`;
+          el.style.animationDelay = `${Math.random() * 10}s`;
+          el.style.setProperty(
+            "--petal-color",
+            isLeaf
+              ? leafColors[Math.floor(Math.random() * leafColors.length)]
+              : petalColors[Math.floor(Math.random() * petalColors.length)],
+          );
+          container.appendChild(el);
+        }
+      }
+
+      initHeroPetals();
+
+      /* ================= COUNTDOWN ================= */
+      const target = new Date("2026-08-08T18:00:00");
+      function tickCountdown() {
+        const now = new Date();
+        let diff = Math.max(0, target - now);
+        const d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const h = Math.floor(diff / (1000 * 60 * 60)) % 24;
+        const m = Math.floor(diff / (1000 * 60)) % 60;
+        const s = Math.floor(diff / 1000) % 60;
+        const pad = (n) => String(n).padStart(2, "0");
+        const daysEl = document.getElementById("cd-days");
+        const hoursEl = document.getElementById("cd-hours");
+        const minsEl = document.getElementById("cd-mins");
+        const secsEl = document.getElementById("cd-secs");
+        if (daysEl) daysEl.textContent = pad(d);
+        if (hoursEl) hoursEl.textContent = pad(h);
+        if (minsEl) minsEl.textContent = pad(m);
+        if (secsEl) secsEl.textContent = pad(s);
+      }
+      tickCountdown();
+      setInterval(tickCountdown, 1000);
+
+      /* ================= BACKGROUND MUSIC ================= */
+      function startMusic() {
+        if (!bgTrack) return;
+        bgTrack.volume = 0.6;
+        bgTrack.play().catch(() => {});
+      }
+
+      function toggleMusic() {
+        if (!bgTrack) return;
+        muted = !muted;
+        bgTrack.muted = muted;
+        soundToggle.style.opacity = muted ? "0.45" : "1";
+        if (!muted) bgTrack.play().catch(() => {});
+      }
+      soundToggle.addEventListener("click", toggleMusic);
+    </script>
+  </body>
+</html>

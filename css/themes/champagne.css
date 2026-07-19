@@ -1,0 +1,89 @@
+/* ============================================================
+   THEME: Champagne (Beige · Ivory · Champagne)
+   Warm, luminous wedding palette — soft ivory grounds with
+   beige layers and champagne-gold accents.
+   ============================================================ */
+
+:root {
+  /* ── Raw palette ── */
+  --ivory: #faf7f2;
+  --ivory-warm: #fffdf8;
+  --beige: #ede6dc;
+  --beige-deep: #ddd2c4;
+  --beige-muted: #c9bdae;
+  --champagne: #c4a574;
+  --champagne-light: #e8d9c4;
+  --champagne-dark: #9a7b52;
+  --taupe: #5c5044;
+  --taupe-light: #8a7d6e;
+  --taupe-muted: #6b5f52;
+
+  /* ── Brand text (headings + section content) ── */
+  --brand-text: #c19c6c;
+
+  /* ── Semantic tokens (used by styles.css) ── */
+  --ink: var(--ivory);
+  --ink-2: var(--beige-deep);
+  --gold: var(--brand-text);
+  --gold-light: var(--brand-text);
+  --burgundy: #8b6914;
+  --parchment: var(--brand-text);
+  --line: rgba(193, 156, 108, 0.42);
+
+  --text-muted: var(--brand-text);
+  --text-subtle: var(--brand-text);
+
+  /* ── Surfaces & gradients ── */
+  --envelope-bg-start: #f5efe6;
+  --envelope-bg-mid: var(--beige);
+  --envelope-bg-end: var(--beige-deep);
+
+  --env-body-start: var(--ivory-warm);
+  --env-body-mid: var(--ivory);
+  --env-body-end: var(--beige);
+  --env-pocket-start: #f7f1e8;
+  --env-pocket-end: var(--beige-deep);
+  --env-flap-start: #d9cebe;
+  --env-flap-mid: var(--beige-muted);
+  --env-flap-end: #b8a992;
+
+  --card-peek-a: var(--ivory-warm);
+  --card-peek-b: #f5f0e8;
+
+  --frame-bg-start: var(--champagne-light);
+  --frame-bg-end: var(--beige-deep);
+
+  --cd-cell-start: var(--ivory-warm);
+  --cd-cell-end: var(--beige);
+
+  --seal-start: #d4b896;
+  --seal-mid: var(--champagne-dark);
+  --seal-end: #7a6348;
+  --seal-inset: rgba(250, 247, 242, 0.55);
+  --seal-text: var(--ivory-warm);
+
+  --shadow-soft: rgba(92, 80, 68, 0.12);
+  --shadow-mid: rgba(92, 80, 68, 0.22);
+  --shadow-deep: rgba(92, 80, 68, 0.32);
+
+  --toggle-bg: rgba(250, 247, 242, 0.94);
+  --cta-hover-text: var(--ivory-warm);
+
+  /* ── Hero poster typography ── */
+  --hero-text: var(--brand-text);
+  --hero-scroll: rgba(193, 156, 108, 0.72);
+
+  /* ── Shared section tokens ── */
+  --section-bg: transparent;
+  --moments-card-radius: 12px;
+  --section-heading-font: "Citadel Script", cursive;
+  --heading-font: "Citadel Script", cursive;
+  --accent-font: "Riccione", serif;
+  --banner-heading-size-mobile: clamp(2rem, 9.5vw, 2.85rem);
+  --banner-heading-size-mobile-sm: clamp(1.85rem, 8.8vw, 2.55rem);
+  --venue-hall-size: clamp(10px, 2vw, 13px);
+  --venue-hall-size-mobile: clamp(9.5px, 2.4vw, 12px);
+  --venue-hall-size-mobile-sm: clamp(9px, 2.6vw, 11.5px);
+  --section-heading-color: var(--brand-text);
+  --foreground: var(--brand-text);
+}

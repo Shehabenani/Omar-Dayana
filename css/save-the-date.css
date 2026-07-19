@@ -1,0 +1,452 @@
+/* ================= SAVE THE DATE BANNER ================= */
+.save-date-banner {
+  --save-date-ratio: 2561 / 1633;
+  --save-date-title-top: 14%;
+  --save-date-date-top: 39.5%;
+  --save-date-countdown-top: 70%;
+  --save-date-timer-top: 55%;
+  --save-date-side-inset: clamp(72px, 16vw, 160px);
+  --save-date-date-offset: 0px;
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--save-date-ratio);
+  height: auto;
+  overflow: hidden;
+  background: var(--section-bg);
+  padding: 0;
+  container-type: size;
+  container-name: save-date;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+.save-date-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.save-date-banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.save-date-banner__content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.save-date-banner__title {
+  position: absolute;
+  top: var(--save-date-title-top);
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - (var(--save-date-side-inset) * 2));
+  margin: 0;
+  text-align: center;
+  font-family: var(--heading-font);
+  font-size: clamp(2.8rem, 10vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--brand-text);
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 14px));
+}
+
+.save-date-banner__date {
+  position: absolute;
+  top: calc(var(--save-date-date-top) + var(--save-date-date-offset, 0px));
+  left: 50%;
+  width: calc(100% - (var(--save-date-side-inset) * 2));
+  margin: 0;
+  text-align: center;
+  font-family: "Cinzel", serif;
+  font-size: clamp(10px, 1.8vw, 13px);
+  font-weight: 600;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: var(--brand-text);
+  opacity: 0;
+  transform: translate(-50%, calc(-50% + 14px));
+}
+
+@media (min-width: 769px) {
+  .save-date-banner__date {
+    font-size: clamp(20px, 2.1vw, 23px);
+  }
+}
+
+.save-date-banner__countdown {
+  position: absolute;
+  top: var(--save-date-countdown-top);
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: calc(100% - (var(--save-date-side-inset) * 2));
+  text-align: center;
+}
+
+.save-date-banner__countdown-label {
+  margin: 0 0 clamp(12px, 2.5vw, 20px);
+  font-family: var(--heading-font);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--brand-text);
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.save-date-banner__timer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: clamp(6px, 1.5vw, 14px);
+  margin: 0;
+  opacity: 0;
+  transform: translateY(14px);
+}
+
+.save-date-banner__cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(6px, 1.2vw, 10px);
+  min-width: 0;
+}
+
+.save-date-banner__num {
+  display: block;
+  font-family: "Riccione", serif;
+  font-style: normal;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1;
+  color: var(--brand-text);
+  letter-spacing: 0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.save-date-banner__sep {
+  font-family: "Riccione", serif;
+  font-style: normal;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  line-height: 1;
+  color: var(--brand-text);
+  opacity: 0.85;
+  transform: translateY(calc(-1 * clamp(10px, 1.8vw, 16px)));
+}
+
+.save-date-banner__unit {
+  display: block;
+  font-family: "Cinzel", serif;
+  font-size: clamp(7px, 1.2vw, 10px);
+  font-weight: 400;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--brand-text);
+  opacity: 0.85;
+  line-height: 1.2;
+}
+
+/* ================= REVEAL ANIMATIONS ================= */
+.save-date-banner.in-view .save-date-banner__title {
+  animation: saveDateTextReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.save-date-banner.in-view .save-date-banner__date {
+  animation: saveDateTextReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.12s
+    forwards;
+}
+
+.save-date-banner.in-view .save-date-banner__countdown-label {
+  animation: saveDateCountdownReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.24s
+    forwards;
+}
+
+.save-date-banner.in-view .save-date-banner__timer {
+  animation: saveDateCountdownReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.36s
+    forwards;
+}
+
+@keyframes saveDateTextReveal {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes saveDateCountdownReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .save-date-banner {
+    --save-date-side-inset: clamp(56px, 14vw, 128px);
+    --save-date-title-top: 13%;
+    --save-date-date-top: 37%;
+    --save-date-countdown-label-top: 58%;
+    --save-date-timer-top: 76%;
+    --save-date-flower-inset: clamp(84px, 21vw, 132px);
+  }
+
+  .save-date-banner__countdown {
+    position: static;
+    transform: none;
+    width: auto;
+  }
+
+  .save-date-banner__countdown-label {
+    position: absolute;
+    top: var(--save-date-countdown-label-top);
+    left: 50%;
+    width: calc(100% - (var(--save-date-side-inset) * 2));
+    margin: 0;
+    transform: translate(-50%, 0) translateY(14px);
+  }
+
+  .save-date-banner__timer {
+    position: absolute;
+    top: var(--save-date-timer-top);
+    left: 50%;
+    width: calc(100% - (var(--save-date-flower-inset) * 2));
+    max-width: 100%;
+    gap: clamp(4px, 1.2vw, 10px);
+    transform: translate(-50%, -50%) translateY(14px);
+  }
+
+  .save-date-banner__num,
+  .save-date-banner__sep {
+    font-size: clamp(1.85rem, 7vw, 3.2rem);
+  }
+
+  .save-date-banner__sep {
+    transform: translateY(calc(-1 * clamp(8px, 1.6vw, 12px)));
+  }
+
+  .save-date-banner__unit {
+    font-size: clamp(6px, 1.5vw, 9px);
+    letter-spacing: 0.2em;
+  }
+
+  .save-date-banner.in-view .save-date-banner__countdown-label {
+    animation: saveDateCountdownLabelReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1)
+      0.24s forwards;
+  }
+
+  .save-date-banner.in-view .save-date-banner__timer {
+    animation: saveDateTimerReveal 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.36s
+      forwards;
+  }
+
+  .save-date-banner__title {
+    font-size: var(--banner-heading-size-mobile);
+  }
+
+  .save-date-banner__date {
+    font-size: clamp(12px, 2vw, 17px);
+    letter-spacing: 0.28em;
+  }
+
+  .save-date-banner__countdown-label {
+    font-size: clamp(1.3rem, 4.5vw, 1.9rem);
+  }
+}
+
+@keyframes saveDateCountdownLabelReveal {
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+@keyframes saveDateTimerReveal {
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .save-date-banner {
+    --save-date-side-inset: clamp(48px, 12vw, 96px);
+    --save-date-title-top: 12.5%;
+    --save-date-date-top: 52%;
+    --save-date-countdown-label-top: 57%;
+    --save-date-timer-top: 79%;
+    --save-date-flower-inset: clamp(72px, 22vw, 104px);
+  }
+
+  .save-date-banner__title {
+    font-size: var(--banner-heading-size-mobile-sm);
+  }
+
+  .save-date-banner__date {
+    font-size: clamp(8px, 2.2cqw, 11px);
+    letter-spacing: 0.22em;
+    line-height: 1;
+  }
+
+  .save-date-banner__countdown-label {
+    font-size: clamp(1.05rem, 4.8cqw, 1.55rem);
+  }
+
+  .save-date-banner__timer {
+    gap: clamp(3px, 1cqw, 8px);
+  }
+
+  .save-date-banner__num,
+  .save-date-banner__sep {
+    font-size: clamp(1.45rem, 7.2cqw, 2.6rem);
+  }
+
+  .save-date-banner__sep {
+    transform: translateY(calc(-1 * clamp(6px, 1.4cqw, 10px)));
+  }
+
+  .save-date-banner__cell {
+    gap: clamp(4px, 1cqw, 8px);
+  }
+
+  .save-date-banner__unit {
+    font-size: clamp(5px, 1.45cqw, 7.5px);
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 390px) {
+  .save-date-banner {
+    --save-date-date-top: 52%;
+    --save-date-countdown-label-top: 61%;
+    --save-date-timer-top: 81%;
+    --save-date-flower-inset: clamp(68px, 21vw, 96px);
+  }
+
+  .save-date-banner__date {
+    letter-spacing: 0.18em;
+  }
+
+  .save-date-banner__countdown-label {
+    font-size: clamp(1rem, 4.5cqw, 1.45rem);
+  }
+
+  .save-date-banner__num,
+  .save-date-banner__sep {
+    font-size: clamp(1.3rem, 6.5cqw, 2.1rem);
+  }
+
+  .save-date-banner__unit {
+    font-size: clamp(5px, 1.35cqw, 7px);
+    letter-spacing: 0.1em;
+  }
+}
+
+/* Safari (iOS + macOS): bracket alignment + spacing differ from Chrome */
+html.is-safari .save-date-banner__image {
+  object-fit: cover;
+  object-position: center center;
+}
+
+@media (max-width: 480px) {
+  html.is-safari .save-date-banner {
+    --save-date-date-top: 66%;
+    --save-date-date-offset: 16px;
+    --save-date-countdown-label-top: 58%;
+    --save-date-timer-top: 80%;
+  }
+
+  html.is-safari .save-date-banner__title {
+    font-size: var(--banner-heading-size-mobile-sm);
+  }
+
+  html.is-safari .save-date-banner__date {
+    font-size: clamp(8px, 2.2vw, 11px);
+  }
+
+  html.is-safari .save-date-banner__countdown-label {
+    font-size: clamp(1.05rem, 4.8vw, 1.55rem);
+  }
+
+  html.is-safari .save-date-banner__num,
+  html.is-safari .save-date-banner__sep {
+    font-size: clamp(1.45rem, 7.2vw, 2.6rem);
+  }
+
+  html.is-safari .save-date-banner__unit {
+    font-size: clamp(5px, 1.45vw, 7.5px);
+  }
+}
+
+@media (max-width: 390px) {
+  html.is-safari .save-date-banner {
+    --save-date-date-top: 38%;
+    --save-date-date-offset: 19px;
+    --save-date-countdown-label-top: 62%;
+    --save-date-timer-top: 82%;
+  }
+
+  html.is-safari .save-date-banner__title {
+    font-size: var(--banner-heading-size-mobile-sm);
+  }
+
+  html.is-safari .save-date-banner__date {
+    font-size: clamp(10px, 2.1vw, 12px);
+    letter-spacing: 0.16em;
+  }
+
+  html.is-safari .save-date-banner__countdown-label {
+    font-size: clamp(1rem, 4.5vw, 1.45rem);
+  }
+
+  html.is-safari .save-date-banner__num,
+  html.is-safari .save-date-banner__sep {
+    font-size: clamp(1.3rem, 6.5vw, 2.1rem);
+  }
+
+  html.is-safari .save-date-banner__unit {
+    font-size: clamp(5px, 1.35vw, 7px);
+  }
+}
+
+/* ================= REDUCED MOTION ================= */
+@media (prefers-reduced-motion: reduce) {
+  .save-date-banner__title,
+  .save-date-banner__date,
+  .save-date-banner__countdown-label,
+  .save-date-banner__timer {
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .save-date-banner__title {
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .save-date-banner__date {
+    transform: translate(-50%, -50%) !important;
+  }
+
+  .save-date-banner__countdown-label,
+  .save-date-banner__timer {
+    transform: translateY(0) !important;
+  }
+
+  @media (max-width: 768px) {
+    .save-date-banner__countdown-label {
+      transform: translate(-50%, 0) !important;
+    }
+
+    .save-date-banner__timer {
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+}

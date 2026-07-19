@@ -1,0 +1,22 @@
+/* ============================================================
+   THEME: Classic (Navy & Gold)
+   Swap this file in wedding-invitation.html to change the palette.
+   Duplicate this file to create new themes (e.g. themes/blush.css).
+   ============================================================ */
+
+:root {
+  --ink: #0F1B2D;
+  --ink-2: #16233A;
+  --gold: #C9A24B;
+  --gold-light: #E8D5A8;
+  --burgundy: #6B1420;
+  --parchment: #F3E9D2;
+  --line: rgba(201, 162, 75, 0.35);
+
+  /* Derived / accent tones */
+  --text-muted: #dfd4b8;
+  --text-subtle: #cfc3a3;
+  --envelope-bg-start: #16233A;
+  --envelope-bg-mid: #0F1B2D;
+  --envelope-bg-end: #090f1a;
+}

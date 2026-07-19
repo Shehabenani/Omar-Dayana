@@ -1,0 +1,245 @@
+/* ================= SWEET DREAMS BANNER ================= */
+.sweet-dreams-banner {
+  --sweet-dreams-ratio: 2561 / 1633;
+  --sweet-dreams-text-top: 44%;
+  --sweet-dreams-baby-top: 58%;
+  --sweet-dreams-side-inset: clamp(40px, 8vw, 96px);
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--sweet-dreams-ratio);
+  height: auto;
+  overflow: hidden;
+  background: var(--section-bg);
+  padding: 0;
+}
+
+.sweet-dreams-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.sweet-dreams-banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.sweet-dreams-banner__content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.sweet-dreams-banner__text {
+  position: absolute;
+  top: var(--sweet-dreams-text-top);
+  left: 50%;
+  width: calc(100% - (var(--sweet-dreams-side-inset) * 2));
+  max-width: none;
+  margin: 0;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-family: "Cormorant Garamond", "Riccione", serif;
+  font-size: clamp(1.25rem, 2.8vw, 2.35rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.4;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-text);
+  opacity: 0;
+  filter: blur(8px);
+}
+
+.sweet-dreams-banner__text-line {
+  display: block;
+}
+
+.sweet-dreams-banner.in-view .sweet-dreams-banner__text {
+  animation: sweetDreamsReveal 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* ---------- sleeping baby icon ---------- */
+.sweet-dreams-banner__baby {
+  position: absolute;
+  top: var(--sweet-dreams-baby-top);
+  left: 50%;
+  width: min(175px, 40vw);
+  transform: translate(-50%, -50%);
+}
+
+.sweet-dreams-banner__baby.reveal {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+  transition: none;
+}
+
+.sweet-dreams-banner__baby-glow {
+  position: absolute;
+  inset: 18% 8% 12%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(193, 156, 108, 0.22) 0%,
+    rgba(193, 156, 108, 0.06) 45%,
+    transparent 72%
+  );
+  opacity: 0;
+  transform: scale(0.92);
+  pointer-events: none;
+}
+
+.sweet-dreams-banner__baby-icon {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1366 / 768;
+  object-fit: contain;
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  filter: drop-shadow(0 10px 24px rgba(193, 156, 108, 0.14));
+}
+
+.sweet-dreams-banner__baby.reveal.in-view .sweet-dreams-banner__baby-glow {
+  animation:
+    sweetDreamsBabyGlowIn 1.4s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    sweetDreamsBabyGlowPulse 4.5s ease-in-out 1.4s infinite;
+}
+
+.sweet-dreams-banner__baby.reveal.in-view .sweet-dreams-banner__baby-icon {
+  animation:
+    sweetDreamsBabyIconIn 1.35s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+    sweetDreamsBabyFloat 4.5s ease-in-out 1.35s infinite;
+}
+
+@keyframes sweetDreamsBabyIconIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes sweetDreamsBabyGlowIn {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sweetDreamsBabyFloat {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-7px) scale(1.012);
+  }
+}
+
+@keyframes sweetDreamsBabyGlowPulse {
+  0%,
+  100% {
+    opacity: 0.85;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.04);
+  }
+}
+
+@keyframes sweetDreamsReveal {
+  0% {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translate(-50%, calc(-50% + 18px));
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(-50%, -50%);
+  }
+}
+
+@media (max-width: 768px) {
+  .sweet-dreams-banner {
+    --sweet-dreams-text-top: 42%;
+    --sweet-dreams-baby-top: 70%;
+    --sweet-dreams-side-inset: clamp(24px, 6vw, 56px);
+  }
+
+  .sweet-dreams-banner__text {
+    font-size: clamp(0.95rem, 3.6vw, 1.45rem);
+    line-height: 1.4;
+    letter-spacing: 0.1em;
+  }
+
+  .sweet-dreams-banner__baby {
+    width: min(148px, 46vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .sweet-dreams-banner {
+    --sweet-dreams-text-top: 41%;
+    --sweet-dreams-baby-top: 68%;
+    --sweet-dreams-side-inset: clamp(16px, 4.5vw, 40px);
+  }
+
+  .sweet-dreams-banner__text {
+    font-size: clamp(0.78rem, 3.1vw, 1rem);
+    letter-spacing: 0.08em;
+  }
+
+  .sweet-dreams-banner__baby {
+    width: min(130px, 50vw);
+  }
+}
+
+@media (max-width: 390px) {
+  .sweet-dreams-banner {
+    --sweet-dreams-baby-top: 66%;
+  }
+
+  .sweet-dreams-banner__baby {
+    width: min(122px, 48vw);
+  }
+}
+
+@media (max-width: 360px) {
+  .sweet-dreams-banner__text {
+    font-size: clamp(0.7rem, 2.85vw, 0.88rem);
+    letter-spacing: 0.06em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sweet-dreams-banner__text {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: translate(-50%, -50%) !important;
+    animation: none !important;
+  }
+
+  .sweet-dreams-banner__baby.reveal.in-view .sweet-dreams-banner__baby-glow,
+  .sweet-dreams-banner__baby.reveal.in-view .sweet-dreams-banner__baby-icon {
+    animation: none !important;
+  }
+
+  .sweet-dreams-banner__baby-icon {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .sweet-dreams-banner__baby-glow {
+    opacity: 0.85 !important;
+    transform: none !important;
+  }
+}

@@ -1,0 +1,27 @@
+/* ================= SECTION HEADINGS ================= */
+h1,
+h2,
+.section-heading {
+  font-family: var(--heading-font);
+}
+
+.section-heading {
+  font-size: clamp(3rem, 7vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--section-heading-color);
+  margin: 0 0 0.75rem;
+  transform: translateY(-0.5em);
+  text-align: center;
+}
+
+.section-heading--left {
+  text-align: left;
+}
+
+@media (max-width: 480px) {
+  .section-heading {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+    transform: translateY(-0.35em);
+  }
+}

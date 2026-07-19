@@ -1,0 +1,215 @@
+/* ================= GLOBAL RESPONSIVE ================= */
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body.locked {
+  height: 100vh;
+  height: 100dvh;
+}
+
+.section-divider img {
+  max-width: 100%;
+}
+
+/* ================= TABLET (≤768px) ================= */
+@media (max-width: 768px) {
+  section {
+    padding: clamp(48px, 10vw, 70px) 0;
+  }
+
+  .section-divider {
+    padding: 0;
+  }
+
+  .sweet-dreams-banner,
+  .see-you-soon-banner {
+    padding: 0;
+  }
+
+  main {
+    padding: 0 clamp(16px, 4vw, 24px) clamp(48px, 8vw, 60px);
+  }
+
+  .invitation-intro {
+    padding-top: clamp(48px, 10vw, 70px);
+  }
+
+  .invitation-intro p.lede {
+    font-size: clamp(17px, 4vw, 19px);
+    padding: 0 4px;
+  }
+
+  .invitation-intro .date-line {
+    font-size: clamp(11px, 2.8vw, 14px);
+    letter-spacing: 0.14em;
+    line-height: 1.7;
+    padding: 0 8px;
+  }
+
+  .divider {
+    gap: 10px;
+    margin: 14px 0 22px;
+  }
+
+  .divider .rule {
+    width: clamp(36px, 10vw, 64px);
+  }
+
+  footer p {
+    font-size: 16px;
+    padding: 0 8px;
+  }
+}
+
+/* ================= MOBILE (≤640px) ================= */
+@media (max-width: 640px) {
+  .portraits {
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .portrait.bride,
+  .portrait.groom {
+    transform: translateY(36px);
+  }
+
+  .portraits.in-view .portrait.bride,
+  .portraits.in-view .portrait.groom {
+    transform: translateY(0);
+  }
+
+  .frame {
+    width: clamp(120px, 34vw, 150px);
+    height: clamp(152px, 43vw, 190px);
+  }
+
+  .medallion {
+    width: 52px;
+    height: 52px;
+    font-size: 22px;
+  }
+
+  .portrait .p-name {
+    font-size: 15px;
+  }
+
+  .welcome {
+    padding: clamp(48px, 10vw, 70px) clamp(16px, 4vw, 24px)
+      clamp(56px, 10vw, 80px);
+  }
+
+  .welcome__text {
+    padding: 0 4px;
+  }
+}
+
+/* ================= SMALL MOBILE (≤480px) ================= */
+@media (max-width: 480px) {
+  .hero-poster__scroll {
+    bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .hero-poster__scroll-label {
+    font-size: 8px;
+    letter-spacing: 0.28em;
+  }
+
+  .moments {
+    --moments-gap: 8px;
+    --moments-pad: 16px;
+  }
+
+  .moments__gallery {
+    gap: 10px;
+  }
+
+  .moments__viewport {
+    mask-image: linear-gradient(
+      90deg,
+      transparent,
+      #000 4%,
+      #000 96%,
+      transparent
+    );
+  }
+
+  footer {
+    padding: 48px 20px calc(44px + env(safe-area-inset-bottom, 0px));
+  }
+
+  #sound-toggle {
+    bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    right: calc(16px + env(safe-area-inset-right, 0px));
+    width: 44px;
+    height: 44px;
+  }
+}
+
+/* ================= EXTRA SMALL (≤360px) ================= */
+@media (max-width: 360px) {
+  .hero-poster__names {
+    font-size: clamp(40px, 12vw, 52px);
+  }
+
+  .hero-poster__tagline {
+    letter-spacing: 0.22em;
+    font-size: 10px;
+  }
+
+  .hero-poster__date {
+    letter-spacing: 0.2em;
+    font-size: 11px;
+  }
+
+  .invitation-intro .date-line {
+    letter-spacing: 0.1em;
+    font-size: 10px;
+  }
+}
+
+/* ================= LANDSCAPE MOBILE ================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-poster__content {
+    margin-top: 0;
+  }
+
+  .hero-poster__names {
+    font-size: clamp(36px, 8vh, 64px);
+  }
+
+  .hero-poster__scroll {
+    display: none;
+  }
+
+  #envelope-screen .video-instruction {
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .video-overlay {
+    padding-bottom: clamp(24px, 6vh, 48px);
+  }
+}
+
+/* ================= TOUCH DEVICES ================= */
+@media (hover: none) and (pointer: coarse) {
+  .hero-poster__scroll,
+  #sound-toggle,
+  #lang-toggle,
+  .video-overlay {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  #lang-toggle {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  #sound-toggle {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}

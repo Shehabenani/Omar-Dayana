@@ -1,0 +1,172 @@
+/* ================= SEE YOU SOON BANNER ================= */
+.see-you-soon-banner {
+  --see-you-soon-ratio: 2561 / 1633;
+  --see-you-soon-side-inset: clamp(100px, 18vw, 240px);
+  --see-you-soon-heading-top: 25%;
+  --see-you-soon-message-top: 52%;
+  --see-you-soon-closing-top: 71%;
+  --see-you-soon-names-top: 78%;
+
+  position: relative;
+  width: 100%;
+  aspect-ratio: var(--see-you-soon-ratio);
+  height: auto;
+  overflow: hidden;
+  background: var(--section-bg);
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.see-you-soon-banner__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.see-you-soon-banner__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center center;
+}
+
+.see-you-soon-banner__content {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.see-you-soon-banner__heading,
+.see-you-soon-banner__message,
+.see-you-soon-banner__closing,
+.see-you-soon-banner__names {
+  position: absolute;
+  left: 50%;
+  width: calc(100% - (var(--see-you-soon-side-inset) * 2));
+  margin: 0;
+  text-align: center;
+  color: var(--brand-text);
+}
+
+.see-you-soon-banner__heading.reveal,
+.see-you-soon-banner__message.reveal,
+.see-you-soon-banner__closing.reveal,
+.see-you-soon-banner__names.reveal {
+  opacity: 0;
+  transition:
+    opacity 0.95s ease,
+    transform 1.05s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.see-you-soon-banner__heading {
+  top: var(--see-you-soon-heading-top);
+  transform: translate(-50%, calc(-50% + 20px));
+  font-family: var(--heading-font);
+  font-size: clamp(2.75rem, 6.5vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+.see-you-soon-banner__message {
+  top: var(--see-you-soon-message-top);
+  transform: translate(-50%, calc(-50% + 20px));
+  max-width: 26em;
+  font-family: "Cinzel", "Riccione", serif;
+  font-size: clamp(9px, 1.45vw, 11px);
+  font-weight: 600;
+  line-height: 1.85;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+
+.see-you-soon-banner__message-line {
+  display: block;
+}
+
+.see-you-soon-banner__closing {
+  top: var(--see-you-soon-closing-top);
+  transform: translate(-50%, calc(-50% + 16px));
+  font-family: "Cinzel", "Riccione", serif;
+  font-size: clamp(8px, 1.25vw, 10px);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+}
+
+.see-you-soon-banner__names {
+  top: var(--see-you-soon-names-top);
+  transform: translate(-50%, calc(-50% + 16px));
+  font-family: var(--heading-font);
+  font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.01em;
+}
+
+/* ================= SCROLL REVEAL ================= */
+.see-you-soon-banner__heading.reveal.in-view,
+.see-you-soon-banner__message.reveal.in-view,
+.see-you-soon-banner__closing.reveal.in-view,
+.see-you-soon-banner__names.reveal.in-view {
+  opacity: 1;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .see-you-soon-banner {
+    --see-you-soon-side-inset: clamp(56px, 12vw, 96px);
+    --see-you-soon-heading-top: 21%;
+    --see-you-soon-message-top: 51%;
+    --see-you-soon-closing-top: 68%;
+  }
+
+  .see-you-soon-banner__heading {
+    font-size: clamp(2.25rem, 8vw, 3.25rem);
+  }
+
+  .see-you-soon-banner__message {
+    max-width: none;
+    width: calc(100% - (var(--see-you-soon-side-inset) * 2));
+    font-size: clamp(10px, 2.85vw, 13px);
+    letter-spacing: 0.15em;
+    line-height: 1.6;
+  }
+
+  .see-you-soon-banner__closing {
+    letter-spacing: 0.22em;
+  }
+
+  .see-you-soon-banner__names {
+    font-size: clamp(1.85rem, 7vw, 2.75rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .see-you-soon-banner {
+    --see-you-soon-side-inset: clamp(40px, 10vw, 72px);
+    --see-you-soon-heading-top: 20%;
+    --see-you-soon-message-top: 50%;
+    --see-you-soon-closing-top: 66.5%;
+  }
+
+  .see-you-soon-banner__message {
+    font-size: clamp(9px, 2.65vw, 12px);
+    letter-spacing: 0.12em;
+    line-height: 1.55;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .see-you-soon-banner__heading.reveal,
+  .see-you-soon-banner__message.reveal,
+  .see-you-soon-banner__closing.reveal,
+  .see-you-soon-banner__names.reveal {
+    opacity: 1 !important;
+    transform: translate(-50%, -50%) !important;
+    transition: none !important;
+  }
+}

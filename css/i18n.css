@@ -1,0 +1,255 @@
+/* ================= LANGUAGE TOGGLE ================= */
+#lang-toggle {
+  position: fixed;
+  top: calc(22px + env(safe-area-inset-top, 0px));
+  left: calc(22px + env(safe-area-inset-left, 0px));
+  z-index: 110;
+  width: 46px;
+  height: 46px;
+  min-width: 46px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: var(--toggle-bg);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Josefin Sans', 'Noto Naskh Arabic', sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  cursor: pointer;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 16px var(--shadow-soft);
+  backdrop-filter: blur(6px);
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+#lang-toggle:hover {
+  box-shadow: 0 6px 22px var(--shadow-mid);
+}
+
+/* ================= RTL ================= */
+html[dir="rtl"] #lang-toggle {
+  left: auto;
+  right: calc(22px + env(safe-area-inset-right, 0px));
+  letter-spacing: 0;
+  font-family: 'Noto Naskh Arabic', 'Josefin Sans', sans-serif;
+}
+
+html[dir="rtl"] #sound-toggle {
+  right: auto;
+  left: calc(22px + env(safe-area-inset-left, 0px));
+}
+
+html[dir="rtl"] .video-instruction {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Noto Naskh Arabic', 'Josefin Sans', sans-serif;
+  font-size: clamp(16px, 3vw, 20px);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+html[dir="rtl"] .hero-poster__tagline {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: clamp(18px, 4.2vw, 26px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.55;
+  max-width: 16em;
+  margin-inline: auto;
+}
+
+html[dir="rtl"] .hero-poster__date {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-size: clamp(15px, 3vw, 19px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[dir="rtl"] .hero-poster__scroll-label {
+  font-family: 'Noto Naskh Arabic', 'Josefin Sans', sans-serif;
+  font-size: clamp(12px, 2.6vw, 14px);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+html[dir="rtl"] .invite-banner__text {
+  font-family: 'Noto Naskh Arabic', serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: clamp(28px, 6.2vw, 42px);
+  line-height: 1.75;
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .venue-banner__location,
+html[dir="rtl"] .venue-banner__hall {
+  font-family: 'Noto Naskh Arabic', 'Cinzel', serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: clamp(11px, 2.2vw, 14px);
+  font-weight: 600;
+}
+
+html[dir="rtl"] .venue-banner__hall {
+  font-size: clamp(12px, 2.6vw, 16px);
+}
+
+html[dir="rtl"] .venue-banner__heading {
+  font-family: 'Amiri', 'Riccione', serif;
+}
+
+html[dir="rtl"] .save-date-banner__title {
+  font-family: 'Amiri', 'Riccione', serif;
+}
+
+html[dir="rtl"] .save-date-banner__date {
+  font-family: 'Noto Naskh Arabic', 'Cinzel', serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: clamp(11px, 2vw, 14px);
+  font-weight: 600;
+}
+
+html[dir="rtl"] .save-date-banner__countdown-label {
+  font-family: 'Amiri', 'Riccione', serif;
+}
+
+html[dir="rtl"] .save-date-banner__timer {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+html[dir="rtl"] .save-date-banner__num,
+html[dir="rtl"] .save-date-banner__sep {
+  font-family: "Riccione", serif;
+  font-style: normal;
+}
+
+html[dir="rtl"] .save-date-banner__unit {
+  font-family: "Noto Naskh Arabic", "Cinzel", serif;
+  letter-spacing: 0;
+  text-transform: none;
+  font-size: clamp(9px, 1.8vw, 12px);
+  font-weight: 500;
+}
+
+html[dir="rtl"] .sweet-dreams-banner__text {
+  font-family: "Amiri", "Noto Naskh Arabic", serif;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.45;
+  max-width: none;
+  text-transform: none;
+}
+
+html[dir="rtl"] .see-you-soon-banner__heading,
+html[dir="rtl"] .see-you-soon-banner__names {
+  font-family: "Amiri", var(--heading-font), serif;
+  letter-spacing: 0;
+}
+
+html[dir="rtl"] .see-you-soon-banner__message,
+html[dir="rtl"] .see-you-soon-banner__closing {
+  font-family: "Noto Naskh Arabic", "Cormorant Garamond", serif;
+  letter-spacing: 0;
+  text-transform: none;
+  line-height: 1.65;
+}
+
+html[dir="rtl"] .see-you-soon-banner__message {
+  font-weight: 600;
+}
+
+html[dir="rtl"] .countdown-section__label,
+html[dir="rtl"] .details-item__label,
+html[dir="rtl"] .date-line,
+html[dir="rtl"] footer p {
+  letter-spacing: 0;
+  text-transform: none;
+  font-family: 'Noto Naskh Arabic', 'Cormorant Garamond', serif;
+}
+
+html[dir="rtl"] .welcome__text,
+html[dir="rtl"] .lede,
+html[dir="rtl"] .details-item__primary,
+html[dir="rtl"] .details-item__secondary,
+html[dir="rtl"] .details-map__directions {
+  font-family: 'Noto Naskh Arabic', 'Cormorant Garamond', serif;
+}
+
+html[dir="rtl"] .section-heading {
+  font-family: 'Amiri', 'Riccione', serif;
+  font-size: clamp(2.75rem, 8vw, 3.5rem);
+  line-height: 1.2;
+}
+
+html[dir="rtl"] .hero-poster__names {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (max-width: 768px) {
+  html[dir="rtl"] .hero-poster__tagline {
+    font-size: clamp(17px, 4.8vw, 22px);
+  }
+
+  html[dir="rtl"] .invite-banner__text {
+    font-size: clamp(20px, 5.2vw, 26px);
+    line-height: 1.72;
+  }
+}
+
+@media (max-width: 480px) {
+  #lang-toggle {
+    top: calc(16px + env(safe-area-inset-top, 0px));
+    left: calc(16px + env(safe-area-inset-left, 0px));
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    font-size: 10px;
+    padding: 0;
+  }
+
+  html[dir="rtl"] .video-instruction {
+    font-size: clamp(15px, 4vw, 18px);
+    padding: 0 16px;
+    text-align: center;
+  }
+
+  html[dir="rtl"] .hero-poster__tagline {
+    font-size: clamp(16px, 5vw, 20px);
+    line-height: 1.65;
+  }
+
+  html[dir="rtl"] .hero-poster__date {
+    font-size: clamp(14px, 3.6vw, 17px);
+  }
+
+  html[dir="rtl"] .invite-banner__text {
+    font-size: clamp(17px, 5.2vw, 22px);
+    line-height: 1.68;
+  }
+
+  html[dir="rtl"] .section-heading {
+    font-size: clamp(2.25rem, 11vw, 3rem);
+  }
+
+  html[dir="rtl"] #lang-toggle {
+    left: auto;
+    right: calc(16px + env(safe-area-inset-right, 0px));
+  }
+
+  html[dir="rtl"] #sound-toggle {
+    left: calc(16px + env(safe-area-inset-left, 0px));
+  }
+}

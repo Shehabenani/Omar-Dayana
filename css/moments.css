@@ -1,0 +1,210 @@
+/* ================= OUR MOMENTS CAROUSEL ================= */
+.moments {
+  --moments-gap: 10px;
+  --moments-pad: clamp(16px, 4vw, 28px);
+  --moments-max: 1040px;
+  --moments-cols: 5;
+  --moments-card-w: calc(
+    (
+        min(100vw, var(--moments-max)) - (var(--moments-pad) * 2) -
+          (var(--moments-gap) * (var(--moments-cols) - 1))
+      ) /
+      var(--moments-cols)
+  );
+  --moments-card-h: calc(var(--moments-card-w) * 1.25);
+  --marquee-shift: 50%;
+
+  position: relative;
+  z-index: 1;
+  background: var(--section-bg);
+  padding: 56px 0 72px;
+  overflow: hidden;
+}
+
+/* Opacity-only reveal so parent transform does not fight the marquee */
+.moments.reveal {
+  transform: none;
+  transition: opacity 1s ease;
+}
+
+.moments.reveal.in-view {
+  transform: none;
+}
+
+.moments .section-heading {
+  margin-bottom: 2rem;
+  padding: 0 var(--moments-pad);
+}
+
+.moments__gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: min(100%, var(--moments-max));
+  margin: 0 auto;
+  padding: 0 var(--moments-pad);
+  box-sizing: border-box;
+}
+
+.moments__row {
+  width: 100%;
+}
+
+.moments__viewport {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: var(--moments-card-h);
+  margin: 0 auto;
+  border-radius: 12px;
+}
+
+/* Edge fades as overlays (cheaper than CSS mask while animating) */
+.moments__viewport::before,
+.moments__viewport::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.moments__viewport::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--section-bg), transparent);
+}
+
+.moments__viewport::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--section-bg), transparent);
+}
+
+/* Marquee uses translateX — must stay LTR even on Arabic pages */
+html[dir="rtl"] .moments__viewport,
+html[dir="rtl"] .moments__track {
+  direction: ltr;
+}
+
+.moments__track {
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  padding: 2px 0;
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: translate3d(0, 0, 0);
+}
+
+.moments__set {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: nowrap;
+}
+
+.moments__track--ltr.moments__track--ready {
+  animation: momentsMarqueeLtr 55s linear infinite;
+}
+
+.moments__track--rtl.moments__track--ready {
+  animation: momentsMarqueeRtl 55s linear infinite;
+}
+
+.moments__track img {
+  flex: 0 0 var(--moments-card-w);
+  width: var(--moments-card-w);
+  height: var(--moments-card-h);
+  margin-right: var(--moments-gap);
+  border-radius: 10px;
+  object-fit: cover;
+  display: block;
+  border: 1px solid rgba(196, 165, 116, 0.18);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+@keyframes momentsMarqueeLtr {
+  from {
+    transform: translate3d(calc(-1 * var(--marquee-shift)), 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes momentsMarqueeRtl {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(calc(-1 * var(--marquee-shift)), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .moments__track {
+    animation: none !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .moments__set {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .moments__viewport::before,
+  .moments__viewport::after {
+    display: none;
+  }
+
+  .moments__viewport {
+    overflow: visible;
+    min-height: 0;
+  }
+
+  .moments__set[aria-hidden="true"] {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .moments {
+    --moments-gap: 8px;
+  }
+
+  .moments__track img {
+    border-radius: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .moments {
+    padding: 44px 0 56px;
+    --moments-gap: 6px;
+    --moments-pad: 14px;
+  }
+
+  .moments .section-heading {
+    margin-bottom: 1.5rem;
+  }
+
+  .moments__gallery {
+    gap: 10px;
+  }
+
+  .moments__track img {
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 360px) {
+  .moments {
+    --moments-gap: 5px;
+    --moments-pad: 10px;
+  }
+}
